@@ -1,4 +1,5 @@
 package BusquedaLineal;
+
 import java.util.Scanner;
 
 /**
@@ -6,33 +7,44 @@ import java.util.Scanner;
  */
 public class BusquedaLineal {
 
-        public static void main(String args[])
-        {
-            int c, n, search, array[];
+    public static void main(String args[]){
 
-            Scanner in = new Scanner(System.in);
-            System.out.println("Numeros de elementos del array:");
-            n = in.nextInt();
-            array = new int[n];
+        int i, n, numeroBuscado, A[];
 
-            System.out.println("Escriba " + n + " enteros");
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Cuántos numeros tendrá el array?: ");
+        n = entrada.nextInt();
+        A = new int[n];
 
-            for (c = 0; c < n; c++)
-                array[c] = in.nextInt();
+        System.out.println("Qué" + n + "numeros tendrá el array?: ");
 
-            System.out.println("Introducir valor para encontrar");
-            search = in.nextInt();
+        for( i = 0; i < n; i++)
+            A[i] = entrada.nextInt();
 
-            for (c = 0; c < n; c++)
-            {
-                if (array[c] == search)
-                {
-                    System.out.println(search + "Está presente " + (c + 1) + ".");
+        System.out.println("Cuál desea encontrar?: ");
+        numeroBuscado =  entrada.nextInt();
+
+        for( i = 0; i < n; i++) {
+            A[i] = entrada.nextInt();
+                if(A[i] == numeroBuscado){
+
+                    System.out.println(numeroBuscado + " Está en la posicion " + (i + 1) + ".");
                     break;
-                }
-            }
-            if (c == n)  /* Searching element is absent */
-                System.out.println(search + " no es presente ");
-        }
-    }
 
+                }
+                if(i == n){
+                    System.out.println(numeroBuscado + " no esta presente ");
+                }
+        }
+
+       /* La logica seria la siguiente si recorriendo el vector en alguna posicion encuentra el numero N buscado
+           retorna la posicion
+           si no sale
+       for (int i = 0; i < vector.length; i++){
+            if(vector[i] == N){
+                return i;
+            }
+            return -1;
+        }*/
+    }
+}
