@@ -1,5 +1,10 @@
 package BusquedaBinaria;
 
+/**
+ * En una busqueda binaria reducimos el tamaño de la serie al mirar el centro del rango, si es mayor que N
+ * la segunda parte del rango se elimina,. Si es menor, la primera se elimina. Si N esta en el medio genial!
+ * Reducimos el tiempo de ejecución al buscar el numero deseado dentro de la serie
+ */
 public class BinarySearch {
 
     public static void main(String[] args) {
